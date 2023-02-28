@@ -30,6 +30,8 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_product")
     private Long id;
 
+    private String Name;
+    private String description;
     private ProductCategory category;
     private ProductType type;
     private Gender gender;

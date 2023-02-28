@@ -17,6 +17,8 @@ public class Product {
     @Id
     private String id;
 
+    private String Name;
+    private String description;
     private ProductCategory category;
     private ProductType type;
     private Gender gender;
