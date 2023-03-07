@@ -6,11 +6,19 @@ import com.dynamicqueries.model.enums.ProductCategory;
 import com.dynamicqueries.model.enums.ProductColor;
 import com.dynamicqueries.model.enums.ProductSize;
 import com.dynamicqueries.model.enums.ProductType;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Document("product")
 public class Product {
 

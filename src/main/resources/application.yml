@@ -1,2 +1,20 @@
 server:
   port: 8080
+
+spring:
+  #Mongo Database
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/store
+      authentication-database: admin
+      username: alex
+      password: alex
+
+  #Postgres Database
+  datasource:
+    url: jdbc:postgresql://localhost:5432/store
+    username: alex
+    password: alex
+  jpa:
+    hibernate:
+      ddl-auto: update
