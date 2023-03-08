@@ -12,6 +12,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,14 +32,27 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_product")
     private Long id;
 
-    private String Name;
+    private String name;
     private String description;
+
+    @Enumerated(EnumType.STRING)
     private ProductCategory category;
+
+    @Enumerated(EnumType.STRING)
     private ProductType type;
+
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    @Enumerated(EnumType.STRING)
     private ProductSize size;
+
+    @Enumerated(EnumType.STRING)
     private ProductColor color;
+
+    @Enumerated(EnumType.STRING)
     private ProductBrand brand;
+
     private BigDecimal price;
 
 }
