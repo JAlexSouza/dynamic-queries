@@ -19,7 +19,7 @@ import java.util.List;
 
 @Component
 @Transactional
-public class PostegresSeederRunner implements CommandLineRunner {
+public class PostgresSeederRunner implements CommandLineRunner {
 
     @Autowired
     private EntityManager entityManager;

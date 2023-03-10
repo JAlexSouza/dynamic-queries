@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
-public class PostegresProductCustomRepository {
+public class PostgresProductCustomRepository {
 
     @Autowired
     private EntityManager entityManager;
