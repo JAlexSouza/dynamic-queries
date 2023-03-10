@@ -7,10 +7,12 @@ import com.dynamicqueries.model.enums.ProductColor;
 import com.dynamicqueries.model.enums.ProductSize;
 import com.dynamicqueries.model.enums.ProductType;
 import lombok.Builder;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Builder
+@Data
 public class ProductDTO {
 
     private String name;
