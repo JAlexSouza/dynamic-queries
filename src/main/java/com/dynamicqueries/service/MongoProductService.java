@@ -26,15 +26,15 @@ public class MongoProductService {
     private MongoProductCustomRepository mongoProductCustomRepository;
 
 
-    public ResponseEntity<List<ProductDTO>> findProductsMongo(String name
-                                                            , String description
-                                                            , ProductCategory category
-                                                            , ProductType type
-                                                            , Gender gender
-                                                            , ProductSize size
-                                                            , ProductColor color
-                                                            , ProductBrand brand
-                                                            , BigDecimal price ){
+    public ResponseEntity<List<ProductDTO>> find( String name
+                                                , String description
+                                                , ProductCategory category
+                                                , ProductType type
+                                                , Gender gender
+                                                , ProductSize size
+                                                , ProductColor color
+                                                , ProductBrand brand
+                                                , BigDecimal price ){
 
         List<Product> products = this.mongoProductCustomRepository.customQuery(name
                                                                             , description

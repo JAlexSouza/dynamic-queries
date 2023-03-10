@@ -25,15 +25,15 @@ public class PostgresProductService {
     @Autowired
     private PostegresProductCustomRepository postegresProductCustomRepository;
 
-    public ResponseEntity<List<ProductDTO>> findProductsPostegres(String name
-                                                                , String description
-                                                                , ProductCategory category
-                                                                , ProductType type
-                                                                , Gender gender
-                                                                , ProductSize size
-                                                                , ProductColor color
-                                                                , ProductBrand brand
-                                                                , BigDecimal price ){
+    public ResponseEntity<List<ProductDTO>> find( String name
+                                                , String description
+                                                , ProductCategory category
+                                                , ProductType type
+                                                , Gender gender
+                                                , ProductSize size
+                                                , ProductColor color
+                                                , ProductBrand brand
+                                                , BigDecimal price ){
 
         List<Product> products = this.postegresProductCustomRepository.customQuery(name
                                                                                 , description
