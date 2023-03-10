@@ -12,8 +12,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import java.math.BigDecimal;
+
+import static org.springframework.data.mongodb.core.mapping.FieldType.DECIMAL128;
 
 @Builder
 @AllArgsConstructor
@@ -33,5 +37,7 @@ public class Product {
     private ProductSize size;
     private ProductColor color;
     private ProductBrand brand;
+
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal price;
 }
