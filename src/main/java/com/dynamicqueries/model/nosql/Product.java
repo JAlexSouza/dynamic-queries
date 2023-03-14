@@ -9,6 +9,7 @@ import com.dynamicqueries.model.enums.ProductType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,7 +23,7 @@ import static org.springframework.data.mongodb.core.mapping.FieldType.DECIMAL128
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
 @Document("product")
 public class Product {
 

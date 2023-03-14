@@ -8,7 +8,7 @@ import com.dynamicqueries.model.enums.ProductType;
 import com.dynamicqueries.model.enums.ProductSize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
 @Entity
 public class Product {
 
@@ -35,7 +35,7 @@ public class Product {
     private String name;
     private String description;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private ProductCategory category;
 
     @Enumerated(EnumType.STRING)
