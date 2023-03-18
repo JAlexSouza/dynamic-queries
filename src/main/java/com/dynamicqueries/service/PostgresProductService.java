@@ -46,7 +46,7 @@ public class PostgresProductService {
                                                                                 , price);
 
         if ( products == null || products.isEmpty() ){
-            return new ResponseEntity<List<ProductDTO>>(Collections.emptyList(), HttpStatus.OK);
+            return new ResponseEntity<List<ProductDTO>>(HttpStatus.NO_CONTENT);
         }
 
         List<ProductDTO> productsDTO = converter(products);
