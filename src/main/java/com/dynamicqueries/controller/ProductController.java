@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
@@ -30,15 +31,15 @@ public class ProductController {
 
 
     @GetMapping("/postgres")
-    public ResponseEntity<List<ProductDTO>> postgresFind( String name
-                                                        , String description
-                                                        , ProductCategory category
-                                                        , ProductType type
-                                                        , Gender gender
-                                                        , ProductSize size
-                                                        , ProductColor color
-                                                        , ProductBrand brand
-                                                        , BigDecimal price ){
+    public ResponseEntity<List<ProductDTO>> postgresFind( @RequestParam(required = false) String name
+                                                        , @RequestParam(required = false) String description
+                                                        , @RequestParam(required = false) ProductCategory category
+                                                        , @RequestParam(required = false) ProductType type
+                                                        , @RequestParam(required = false) Gender gender
+                                                        , @RequestParam(required = false) ProductSize size
+                                                        , @RequestParam(required = false) ProductColor color
+                                                        , @RequestParam(required = false) ProductBrand brand
+                                                        , @RequestParam(required = false) BigDecimal price ){
 
         return this.postgresProductService.find(  name
                                                 , description
@@ -52,15 +53,15 @@ public class ProductController {
     }
 
     @GetMapping("/mongo")
-    public ResponseEntity<List<ProductDTO>> mongoFind(String name
-                                                    , String description
-                                                    , ProductCategory category
-                                                    , ProductType type
-                                                    , Gender gender
-                                                    , ProductSize size
-                                                    , ProductColor color
-                                                    , ProductBrand brand
-                                                    , BigDecimal price ){
+    public ResponseEntity<List<ProductDTO>> mongoFind(@RequestParam(required = false) String name
+                                                    , @RequestParam(required = false) String description
+                                                    , @RequestParam(required = false) ProductCategory category
+                                                    , @RequestParam(required = false) ProductType type
+                                                    , @RequestParam(required = false) Gender gender
+                                                    , @RequestParam(required = false) ProductSize size
+                                                    , @RequestParam(required = false) ProductColor color
+                                                    , @RequestParam(required = false) ProductBrand brand
+                                                    , @RequestParam(required = false) BigDecimal price ){
 
         return this.mongoProductService.find( name
                                             , description
