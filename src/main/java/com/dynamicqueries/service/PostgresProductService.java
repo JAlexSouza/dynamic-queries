@@ -15,9 +15,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PostgresProductService {
@@ -49,27 +48,9 @@ public class PostgresProductService {
             return new ResponseEntity<List<ProductDTO>>(HttpStatus.NO_CONTENT);
         }
 
-        List<ProductDTO> productsDTO = converter(products);
+        List<ProductDTO> productsDTO = products.stream().map(ProductDTO::convert).collect(Collectors.toList());
 
         return new ResponseEntity<List<ProductDTO>>(productsDTO, HttpStatus.OK);
     }
 
-    private List<ProductDTO> converter(List<Product> products) {
-        List<ProductDTO> productsDTO = new ArrayList<ProductDTO>();
-        for (Product product : products) {
-            productsDTO.add(ProductDTO.builder()
-                                        .name(product.getName())
-                                        .description(product.getDescription())
-                                        .category(product.getCategory())
-                                        .type(product.getType())
-                                        .gender(product.getGender())
-                                        .size(product.getSize())
-                                        .color(product.getColor())
-                                        .brand(product.getBrand())
-                                        .price(product.getPrice())
-                                        .build());
-        }
-
-        return productsDTO;
-    }
 }
